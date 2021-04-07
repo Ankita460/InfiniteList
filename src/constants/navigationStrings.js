@@ -7,4 +7,5 @@ export default{
     HOMEPAGE :"HomePage",
     CHART: "Chart",
     QRCODE: "QrCode",
+    IMAGE_ZOOM: "ImageZoom"
 }

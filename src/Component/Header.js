@@ -4,13 +4,17 @@ import imagePath from '../constants/imagePath'
 import navigationStrings from '../constants/navigationStrings'
 import MainStack from '../Navigation/MainStack'
 import colors from '../styles/colors'
+import { useNavigation } from '@react-navigation/native';
+
 
 
  function Header({textData , onBack}) {
+    const navigation = useNavigation();
+
     return (
         <View style={{flexDirection:'row', backgroundColor: colors.themeColor         
     }}>
-            <TouchableOpacity onPress={() => props.navigation.navigate(MainStack)}>
+            <TouchableOpacity onPress={() =>navigation.openDrawer()}>
             {/* <Image source={imagePath.backIcon} style={styles.backIcon} 
             /> */}
             <Image source={imagePath.menu} style={styles.backIcon}/>
