@@ -47,7 +47,7 @@ export default class QrCode extends Component {
         <View style={styles.QRCodeScanner}>
         <QRCodeScanner
         onRead={this.onSuccess}
-        flashMode={RNCamera.Constants.FlashMode.torch}
+        flashMode={RNCamera.Constants.FlashMode.auto}
         topContent={
           <Text style={styles.centerText}>
             Go to{' '}

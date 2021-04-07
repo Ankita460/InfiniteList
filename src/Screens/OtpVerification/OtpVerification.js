@@ -66,47 +66,46 @@ export default class OtpVerification extends Component {
 
   render() {
     const {isvalid} = this.state;
-    const {phoneNumber} = this.props.route.params;
-
+const {phoneNumber} = this.props.route.params;
     return (
       <View>
-      <Header
-        textData={strings.ENTER_VERIFICATION_CODE}
-        onBack={() => this.handleBackButtonClick()}
-      />
+        <Header
+          textData={strings.ENTER_VERIFICATION_CODE}
+          onBack={() => this.handleBackButtonClick()}
+        />
 
-      <View style={{marginVertical: 60}}>
-        <Text style={styles.sentCode}>
-          {strings.WE_HAVE_SENT_A_VERIFICATION_CODE}{' '}
-        </Text>
-        <Text style={styles.phone}>We have send the OTP on {phoneNumber} you will apply to the fields. </Text>
-      </View>
-      <View>
-        <View style={styles.container}>
-          <OTPTextView
-            ref={e => (this.input1 = e)}
-            containerStyle={styles.textInputContainer}
-            textInputStyle={[styles.roundedTextInput, {borderBottomWidth: 2, borderBottomColor: colors.themeColor}]}
-            handleTextChange={text => this.setState({otpInput: text})}
-            inputCount={5}
-            keyboardType="numeric"
+        <View style={{marginVertical: 60}}>
+          <Text style={styles.sentCode}>
+            {strings.WE_HAVE_SENT_A_VERIFICATION_CODE}{' '}
+          </Text>
+          <Text style={styles.phone}>We have send the OTP on {phoneNumber} you will apply to the fields. </Text>
+        </View>
+        <View>
+          <View style={styles.container}>
+            <OTPTextView
+              ref={e => (this.input1 = e)}
+              containerStyle={styles.textInputContainer}
+              textInputStyle={[styles.roundedTextInput, {borderBottomWidth: 2, borderBottomColor: colors.themeColor}]}
+              handleTextChange={text => this.setState({otpInput: text})}
+              inputCount={5}
+              keyboardType="numeric"
+            />
+          </View>
+        </View>
+
+        <View>
+          <View style={{flexDirection: 'row'}}>
+          <Text style={styles.footer1}>{strings.DONT_RECEIVE_THE_CODE}</Text>
+<Text style={styles.Resend}>Resend</Text>
+          </View>
+
+          <SendOtpButton
+            buttonText={strings.GO_TO_HOMEPAGE}
+            onButtonCLick={() => this.checkData() }
+            isvalid={isvalid}
           />
         </View>
       </View>
-
-      <View>
-        <View style={{flexDirection: 'row'}}>
-        <Text style={styles.footer1}>{strings.DONT_RECEIVE_THE_CODE}</Text>
-<Text style={styles.Resend}>Resend</Text>
-        </View>
-
-        <SendOtpButton
-          buttonText={strings.GO_TO_HOMEPAGE}
-          onButtonCLick={() => this.checkData() }
-          isvalid={isvalid}
-        />
-      </View>
-    </View>
     );
   }
 }
