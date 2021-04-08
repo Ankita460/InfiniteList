@@ -12,8 +12,10 @@ class Chat extends Component {
         {
           _id: 1,
           text: 'Hello developer',
+
           createdAt: new Date(Date.UTC(2016, 7, 30, 17, 20, 0)),
           user: {
+              
             _id: 2,
             name: 'React Native',
             avatar: 'https://digitalrill.com/wp-content/uploads/2019/04/professional-girl-png-8.png',

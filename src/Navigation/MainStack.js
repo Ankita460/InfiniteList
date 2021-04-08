@@ -17,6 +17,7 @@ export default function(){
   return(
     <>
     <Drawer.Navigator initialRouteName={navigationStrings.LIST}>
+      
       <Drawer.Screen name={navigationStrings.HOMEPAGE} component={HomePage} />
       <Drawer.Screen name={navigationStrings.LIST} component={List} />
       <Drawer.Screen name={navigationStrings.PROFILE} component={Profile} />
